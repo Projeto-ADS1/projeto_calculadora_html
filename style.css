@@ -1,0 +1,99 @@
+/* style.css */
+
+/* Reset simples e fonte */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Centraliza a calculadora no meio da tela */
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #f4f5f7;
+}
+
+/* O <div> principal (container da calculadora) */
+body > div {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 320px;
+}
+
+/* O visor (input) */
+body > div > input {
+  width: 100%;
+  height: 64px;
+  background-color: #1e293b;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 2rem;
+  text-align: right;
+  padding: 0 16px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+/* O container dos botões (segundo <div>) */
+body > div > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Estilo geral de todos os botões */
+button {
+  height: 56px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+/* Efeito ao passar o mouse sobre os botões */
+button:hover {
+  background-color: #e2e8f0;
+}
+
+/* Efeito ao clicar no botão */
+button:active {
+  transform: scale(0.95);
+}
+
+/* O botão 0 (penúltimo elemento) ocupa duas colunas para alinhar a grade */
+body > div > div > button:nth-last-child(2) {
+  grid-column: span 2;
+}
+
+/* Destaque discreto para os botões de ação e operadores principais */
+/* C e ⌫ (primeiros dois botões) */
+body > div > div > button:nth-child(1),
+body > div > div > button:nth-child(2) {
+  color: #ef4444;
+  background-color: #fef2f2;
+}
+
+body > div > div > button:nth-child(1):hover,
+body > div > div > button:nth-child(2):hover {
+  background-color: #fee2e2;
+}
+
+/* Botão de igual '=' (16º botão) */
+body > div > div > button:nth-child(16) {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+body > div > div > button:nth-child(16):hover {
+  background-color: #1d4ed8;
+}
