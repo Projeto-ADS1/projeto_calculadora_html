@@ -2,35 +2,140 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora</title>
+  <style>
+    /* Configurações globais e centralização na tela */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f2f5;
+    }
+
+    /* Container principal da calculadora */
+    .calculadora {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 320px;
+    }
+
+    /* Visor / Display */
+    .display {
+      width: 100%;
+      height: 60px;
+      background-color: #222222;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 2rem;
+      text-align: right;
+      padding: 0 15px;
+      margin-bottom: 20px;
+    }
+
+    /* Grade dos botões */
+    .botoes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    /* Estilo padrão dos botões */
+    button {
+      height: 60px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      background-color: #e4e6eb;
+      color: #1c1e21;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    /* Efeitos de hover e clique */
+    button:hover {
+      background-color: #d8dadf;
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    /* Botões de Operadores (+, -, *, /) */
+    .operador {
+      background-color: #f09235;
+      color: white;
+    }
+
+    .operador:hover {
+      background-color: #e08225;
+    }
+
+    /* Botão de Igual (=) */
+    .igual {
+      background-color: #2e89ff;
+      color: white;
+    }
+
+    .igual:hover {
+      background-color: #1a73e8;
+    }
+
+    /* Botões de Limpar e Apagar (C e ⌫) */
+    .acao {
+      background-color: #e4e6eb;
+      color: #d93025;
+    }
+
+    .acao:hover {
+      background-color: #fce8e6;
+    }
+
+    /* Faz o botão '0' ocupar 2 colunas */
+    .zero {
+      grid-column: span 2;
+    }
+  </style>
 </head>
 <body>
 
-  <div>
-    <input type="text" disabled placeholder="0">
+  <div class="calculadora">
+    <input type="text" class="display" disabled placeholder="0">
 
-    <div>
-      <button>C</button>
-      <button>⌫</button>
-      <button>/</button>
-      <button>*</button>
+    <div class="botoes">
+      <button class="acao">C</button>
+      <button class="acao">⌫</button>
+      <button class="operador">/</button>
+      <button class="operador">*</button>
 
       <button>7</button>
       <button>8</button>
       <button>9</button>
-      <button>-</button>
+      <button class="operador">-</button>
 
       <button>4</button>
       <button>5</button>
       <button>6</button>
-      <button>+</button>
+      <button class="operador">+</button>
 
       <button>1</button>
       <button>2</button>
       <button>3</button>
-      <button>=</button>
+      <button class="igual">=</button>
 
-      <button>0</button>
+      <button class="zero">0</button>
       <button>,</button>
     </div>
   </div>
